@@ -1,148 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kanaka_durgamma Temple - Bookings</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-image: url('static/kanaka_durgamma.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-            position: relative;
-            min-height: 100vh;
-        }
+{% extends "base.html" %}
 
-        .container {
-            color:#fff;
-            position: relative;
-            z-index: 1;
-        }
+{% block title %}Kanaka Durgamma Temple - Bookings{% endblock %}
 
-        .booking-options {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
+{% block content %}
+<div class="py-3 bg-white border-bottom">
+    <div class="container">
+        <h3 class="fw-bold mb-1">Kanaka Durgamma Temple</h3>
+        <p class="text-muted small mb-0"><i class="fas fa-map-marker-alt text-primary me-1"></i> Indrakeeladri Hill, Vijayawada | Darshan Hours: 04:00 AM - 09:30 PM</p>
+    </div>
+</div>
 
-        .booking-option {
-            background-color: grey;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .booking-option:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px black;
-        }
-
-        .booking-option h2 {
-            color:black;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .btn-booking {
-            width: 150px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .btn-booking:hover {
-            background-color: pink;
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h1 class="text-center mt-5">Kanaka Durgamma Temple - Bookings</h1>
-    <div class="booking-options">
-        <div class="booking-option">
-            <h2>PAID DARSHAN</h2>
-            <button id="paidButton" class="btn btn-warning btn-booking">Book Now</button>
+<div class="container py-4">
+    <h5 class="fw-bold mb-3">Available Services</h5>
+    <div class="row g-3">
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-primary mb-2">₹350</span>
+                    <h6 class="fw-bold mb-1">Paid Darshan</h6>
+                    <small class="text-muted d-block mb-3">Quick Entry Pass</small>
+                </div>
+                <a href="/paiddarshan?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-primary btn-sm w-100">Book Darshan</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>FREE DARSHAN</h2>
-            <button id="freeButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-warning text-dark mb-2">Protocol</span>
+                    <h6 class="fw-bold mb-1">VIP Darshan</h6>
+                    <small class="text-muted d-block mb-3">Kumkumarchana</small>
+                </div>
+                <a href="/vip_darshan?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-primary btn-sm w-100">Book VIP</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>VEHICLE PARKING</h2>
-            <button id="vehicleButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-success mb-2">Free</span>
+                    <h6 class="fw-bold mb-1">Free Darshan</h6>
+                    <small class="text-muted d-block mb-3">General Queue</small>
+                </div>
+                <a href="/free_darshan?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-success btn-sm w-100">Get Token</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>ROOMS BOOKING</h2>
-            <button id="roomButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-info text-dark mb-2">Rooms</span>
+                    <h6 class="fw-bold mb-1">Room Booking</h6>
+                    <small class="text-muted d-block mb-3">Hill Cottages</small>
+                </div>
+                <a href="/roombooking?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-secondary btn-sm w-100">Book Room</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>PRASAD BOOKING</h2>
-            <button id="prasadButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-warning text-dark mb-2">Prasadam</span>
+                    <h6 class="fw-bold mb-1">Prasad Booking</h6>
+                    <small class="text-muted d-block mb-3">Special Laddus</small>
+                </div>
+                <a href="/prasadbooking?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-secondary btn-sm w-100">Order Prasad</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>VIP BOOKING</h2>
-            <button id="vipButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-danger mb-2">Annadanam</span>
+                    <h6 class="fw-bold mb-1">Food Booking</h6>
+                    <small class="text-muted d-block mb-3">Meal Seva</small>
+                </div>
+                <a href="/foodbooking?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-secondary btn-sm w-100">Book Food</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>FOOD BOOKING</h2>
-            <button id="foodButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-primary mb-2">Travel</span>
+                    <h6 class="fw-bold mb-1">Taxi Booking</h6>
+                    <small class="text-muted d-block mb-3">Hill Cabs</small>
+                </div>
+                <a href="/taxibooking?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-secondary btn-sm w-100">Book Taxi</a>
+            </div>
         </div>
-        <div class="booking-option">
-            <h2>TAXI BOOKING</h2>
-            <button id="taxiButton" class="btn btn-warning btn-booking">Book Now</button>
+
+        <div class="col-md-3 col-6">
+            <div class="temple-card text-center p-3 h-100 d-flex flex-column justify-content-between">
+                <div>
+                    <span class="badge bg-success mb-2">Parking</span>
+                    <h6 class="fw-bold mb-1">Vehicle Parking</h6>
+                    <small class="text-muted d-block mb-3">Ghat Parking</small>
+                </div>
+                <a href="/vehicle?temple=Sri+Durga+Malleswara+Kanaka+Durgamma" class="btn btn-outline-secondary btn-sm w-100">Book Parking</a>
+            </div>
         </div>
     </div>
 </div>
-<footer>
-    <div class="container">
-        <p>&copy; 2024 kanaka durgamma Temple. All rights reserved.</p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script>
-    function bookNow(page) {
-        window.location.href = page;
-    }
-    document.getElementById("paidButton").addEventListener("click", function() {
-        bookNow("/paiddarshan");
-    });
-    document.getElementById("freeButton").addEventListener("click", function() {
-        bookNow("/free_darshan");
-    });
-    document.getElementById("vehicleButton").addEventListener("click", function() {
-        bookNow("/vehicle");
-    });
-    document.getElementById("roomButton").addEventListener("click", function() {
-        bookNow("/roombooking");
-    });
-    document.getElementById("prasadButton").addEventListener("click", function() {
-        bookNow("/prasadbooking");
-    });
-    document.getElementById("vipButton").addEventListener("click", function() {
-        bookNow("/vip_darshan");
-    });
-    document.getElementById("foodButton").addEventListener("click", function() {
-        bookNow("/foodbooking");
-    });
-    document.getElementById("taxiButton").addEventListener("click", function() {
-        bookNow("/taxibooking");
-    });
-</script>
-</body>
-</html>
+{% endblock %}
