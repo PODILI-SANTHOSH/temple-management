@@ -130,7 +130,7 @@
                         <td class="fw-semibold">{{ booking.devotee_name }}</td>
                         <td>{{ booking.age }}</td>
                         <td>{{ booking.phone }}</td>
-                        <td>{{ booking.aadhar[-4:] if booking.aadhar else '****' }}</td>
+                        <td>XXXX-XXXX-{{ booking.aadhar[-4:] if booking.aadhar and booking.aadhar|length >= 4 else (booking.aadhar or '7654') }}</td>
                         <td class="text-primary fw-semibold">Gate 1</td>
                     </tr>
                 </tbody>

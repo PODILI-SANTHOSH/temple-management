@@ -63,12 +63,12 @@ def init_db():
             })
             
         # Seed default devotee user if not exists
-        if not db.users.find_one({"email": "devotee@temple.org"}):
+        if not db.users.find_one({"email": "santhoshpodili874@gmail.com"}):
             devotee_hash = generate_password_hash("devotee123")
             db.users.insert_one({
-                "name": "Smt. Lakshmi Narayana",
-                "email": "devotee@temple.org",
-                "phone": "9848022338",
+                "name": "Santhosh Podili",
+                "email": "santhoshpodili874@gmail.com",
+                "phone": "8374710287",
                 "aadhar": "543210987654",
                 "city": "Vijayawada",
                 "password_hash": devotee_hash,
@@ -81,11 +81,11 @@ def init_db():
             sample_bookings = [
                 {
                     "booking_ref": "TTD-78214",
-                    "devotee_name": "Smt. Lakshmi Narayana",
-                    "email": "devotee@temple.org",
-                    "phone": "9848022338",
+                    "devotee_name": "Santhosh Podili",
+                    "email": "santhoshpodili874@gmail.com",
+                    "phone": "8374710287",
                     "aadhar": "543210987654",
-                    "age": 42,
+                    "age": 28,
                     "temple_name": "Tirumala Tirupathi Devasthanam",
                     "service_type": "Special Entry Darshan (₹350)",
                     "service_date": "2026-11-20",
@@ -101,11 +101,11 @@ def init_db():
                 },
                 {
                     "booking_ref": "KDK-44109",
-                    "devotee_name": "Smt. Lakshmi Narayana",
-                    "email": "devotee@temple.org",
-                    "phone": "9848022338",
+                    "devotee_name": "Santhosh Podili",
+                    "email": "santhoshpodili874@gmail.com",
+                    "phone": "8374710287",
                     "aadhar": "543210987654",
-                    "age": 42,
+                    "age": 28,
                     "temple_name": "Sri Durga Malleswara Kanaka Durgamma",
                     "service_type": "Prasad Booking",
                     "service_date": "2026-11-21",
