@@ -6,12 +6,13 @@ import random
 from datetime import datetime, date
 from bson import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
 
-MONGO_URI = os.environ.get(
-    'MONGO_URI', 
-    'mongodb+srv://VEEZWORKS:SANTHU7981@veezworks.stpqs.mongodb.net/?retryWrites=true&w=majority&appName=veezworks'
-)
-DB_NAME = 'temple_management'
+# Load local environment variables from .env
+load_dotenv()
+
+MONGO_URI = os.environ.get('MONGO_URI', 'mongodb://localhost:27017/temple_management')
+DB_NAME = os.environ.get('DB_NAME', 'temple_management')
 
 client = None
 db_conn = None

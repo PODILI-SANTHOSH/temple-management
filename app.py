@@ -2,12 +2,16 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, s
 import os
 import json
 from functools import wraps
+from dotenv import load_dotenv
+
+# Load environment configuration
+load_dotenv()
 
 # Import Database Layer
 import db
 
 app = Flask(__name__, template_folder="template", static_url_path='/static')
-app.secret_key = os.environ.get('SECRET_KEY', 'devalaya_sacred_temple_secret_key_2026')
+app.secret_key = os.environ.get('SECRET_KEY', 'temple_management_secret_key_change_in_production')
 
 # Initialize MongoDB database on startup
 db.init_db()
