@@ -9,7 +9,7 @@ import db
 app = Flask(__name__, template_folder="template", static_url_path='/static')
 app.secret_key = os.environ.get('SECRET_KEY', 'devalaya_sacred_temple_secret_key_2026')
 
-# Initialize SQLite database on startup
+# Initialize MongoDB database on startup
 db.init_db()
 
 # Decorators for route protection

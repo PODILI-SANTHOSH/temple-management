@@ -104,9 +104,6 @@
                             <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user-circle"></i>
                                 <span>{{ session.get('user_name', 'Devotee') }}</span>
-                                {% if session.get('user_role') == 'admin' %}
-                                    <span class="badge bg-danger ms-1" style="font-size: 0.65rem;">ADMIN</span>
-                                {% endif %}
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="/my-bookings"><i class="fas fa-ticket-alt me-2 text-primary"></i> My Bookings</a></li>
